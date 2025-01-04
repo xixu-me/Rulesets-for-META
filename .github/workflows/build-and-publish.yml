@@ -41,6 +41,10 @@ jobs:
           path: community
       - uses: actions/checkout@v4
         with:
+          repository: xixu-me/Dandified-DLC
+          path: community
+      - uses: actions/checkout@v4
+        with:
           repository: MetaCubeX/meta-rules-converter
           path: converter
       - uses: actions/checkout@v4
