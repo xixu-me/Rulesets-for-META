@@ -42,7 +42,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: xixu-me/Dandified-DLC
-          path: community
+          path: dnf
       - uses: actions/checkout@v4
         with:
           repository: MetaCubeX/meta-rules-converter
@@ -133,6 +133,10 @@ jobs:
           curl -sSL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PrivateTracker/PrivateTracker.list | ${{ env.SED }} > ./community/data/tracker
           curl -sSL https://gitea.com/XIU2/TrackersListCollection/raw/branch/master/all.txt | grep -i "\.[A-Z]" | grep -v tracker | sed 's/^.*\/\///g' | sed 's/:.*\/.*//g' >> ./community/data/tracker
           curl -sSL https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/BlockHttpDNS/BlockHttpDNS.list | ${{ env.SED }} > ./community/data/httpdns
+
+      - name: Supplement lists
+        run: |
+          mv ./dnf/data/* ./community/data/
 
       - name: Generate rulesets in YAML and MRS format
         run: |
