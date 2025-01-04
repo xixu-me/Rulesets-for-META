@@ -1,4 +1,4 @@
-# rulesets for META
+# Rulesets for META
 
 ## Overview
 
