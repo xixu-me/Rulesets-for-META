@@ -17,6 +17,6 @@ This repository provides two series of rulesets ([basic](https://github.com/xixu
 
 ## License
 
-Copyright &copy; 2025 [Xi Xu](https://xi-xu.me). All rights reserved.
+Copyright &copy; [Xi Xu](https://xi-xu.me). All rights reserved.
 
 Licensed under the [GPL-3.0](https://github.com/xixu-me/rulesets-for-META/blob/main/LICENSE) license.  
