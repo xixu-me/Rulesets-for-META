@@ -497,10 +497,7 @@ jobs:
 
       - name: Prepare converter
         run: |
-          LATEST_VERSION=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | jq -r .tag_name)
-          curl -L "https://github.com/MetaCubeX/mihomo/releases/download/${LATEST_VERSION}/mihomo-linux-amd64-${LATEST_VERSION}.gz" -o converter/mihomo.gz
-          gzip -d converter/mihomo.gz
-          chmod +x converter/mihomo
+          chmod +x converter/bin
 
       - name: Convert to MRS format
         run: |
@@ -518,7 +515,7 @@ jobs:
               input_dir="basic"
               ruleset_type="domain"
             fi
-            ./converter/mihomo convert-ruleset ${ruleset_type} yaml ${input_dir}/${file}.yaml publish/${file}.mrs
+            ./converter/bin convert-ruleset ${ruleset_type} yaml ${input_dir}/${file}.yaml publish/${file}.mrs
             cp ${input_dir}/${file}.yaml publish/yaml/${file}.yaml
           done
           cp basic/applications.yaml publish/applications.yaml
